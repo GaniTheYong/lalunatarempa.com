@@ -51,7 +51,13 @@ nav a {
 /* Hero */
 .hero {
   position: relative;
-  background: linear-gradient(to bottom, #4c1b06, #2c0e04);
+  /* Use the downloaded cover image as the hero background instead of a flat gradient.  
+     The image is placed in the project folder (cover.png). It is scaled to fill the
+     entire hero area while keeping its aspect ratio and centered within the space. */
+  background-image: url('cover.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #fff;
   height: 380px;
   display: flex;
