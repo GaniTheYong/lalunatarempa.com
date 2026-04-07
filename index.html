@@ -1,67 +1,87 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laluna Tarempa – Masakan Melayu Khas Anambas</title>
-    <!-- Google fonts for a clean sans‑serif appearance -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laluna Tarempa</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  color: #333;
+  text-align: center;
+}
+
+header {
+  background: #3b2f2f;
+  padding: 15px;
+}
+
+header img {
+  height: 40px;
+}
+
+.hero {
+  padding: 40px 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #8b5e3c;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.menu-section {
+  padding: 20px;
+}
+
+iframe {
+  width: 100%;
+  height: 80vh;
+  border: none;
+  border-radius: 10px;
+}
+
+footer {
+  padding: 20px;
+  background: #3b2f2f;
+  color: white;
+}
+</style>
+
 </head>
 <body>
-    <!-- Page header with logo and navigation link -->
-    <header>
-        <div class="container header-inner">
-            <a href="https://lalunatarempa.com/">
-                <img src="https://lalunatarempa.com/wp-content/uploads/2021/10/LalunaLogo1.jpg" alt="Laluna Tarempa logo" class="logo">
-            </a>
-            <nav>
-                <a href="https://www.google.com/maps/place/1%C2%B008'13.3%22N+104%C2%B006'42.0%22E/@1.1370562,104.109666,17z/data=!4m5!3m4!1s0x0:0xa29d6b6b0ca20ba3!8m2!3d1.1370374!4d104.111674?hl=en" target="_blank" rel="noreferrer">Lokasi Google Maps</a>
-            </nav>
-        </div>
-    </header>
 
-    <main>
-        <!-- Hero section with welcoming copy -->
-        <section class="hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1>laluna tarempa</h1>
-                <p>Tempat Nongkrong Yang Asik Dengan Harga Terjangkau</p>
-                <p class="subheading">Town House Lavinca Block K No.1 Bukit Citra Lestari – Batam</p>
-            </div>
-        </section>
+<header>
+  <img src="logo.png" alt="Laluna Tarempa">
+</header>
 
-        <!-- Gallery of menu images; using remote sources from the WordPress site -->
-        <section class="gallery">
-            <h2>Menu</h2>
-            <div class="gallery-grid">
-                <img src="https://lalunatarempa.com/wp-content/uploads/2025/07/Screenshot-2025-07-22-at-13.37.30.png" alt="Menu screenshot 1">
-                <img src="https://lalunatarempa.com/wp-content/uploads/2025/07/Screenshot-2025-07-22-at-13.37.42.png" alt="Menu screenshot 2">
-                <img src="https://lalunatarempa.com/wp-content/uploads/2025/07/Screenshot-2025-07-22-at-13.37.49.png" alt="Menu screenshot 3">
-                <img src="https://lalunatarempa.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-at-18.46.53.png" alt="Menu screenshot 4">
-                <img src="https://lalunatarempa.com/wp-content/uploads/2025/07/Screenshot-2025-07-22-at-13.38.00.png" alt="Menu screenshot 5">
-                <img src="https://lalunatarempa.com/wp-content/uploads/2025/07/Screenshot-2025-07-22-at-13.38.06.png" alt="Menu screenshot 6">
-            </div>
-        </section>
+<section class="hero">
+  <h1>Masakan Melayu Khas Tarempa</h1>
+  <p>Tempat nongkrong asik dengan harga terjangkau</p>
+  <a class="btn" href="https://wa.me/6281277640663">Pesan via WhatsApp</a>
+</section>
 
-        <!-- Contact and ordering information -->
-        <section class="contact">
-            <h2>Kontak &amp; Pemesanan</h2>
-            <ul>
-                <li>Info paket, WA kami di <a href="https://wa.me/6281261025391" target="_blank" rel="noopener">0812‑6102‑5391</a></li>
-                <li>WA standby: <a href="https://wa.me/6281277640663" target="_blank" rel="noopener">081277640663</a></li>
-                <li>GoFood: <a href="https://gofood.link/u/pWgB" target="_blank" rel="noopener">Laluna Tarempa</a></li>
-                <li>GrabFood: <a href="https://food.grab.com/id/id/restaurant/laluna-tarempa-batu-besar-delivery/IDGFSTI000013t7" target="_blank" rel="noopener">Laluna Tarempa</a></li>
-            </ul>
-            <p class="address">Ruko Lavinca, Jl. Tengku Sulung No.1, Batu Besar, Kecamatan Nongsa, Kota Batam 29466.</p>
-            <p>Google Maps: <a href="https://goo.gl/maps/5su4qgB4iV3Ryzyz8" target="_blank" rel="noopener">Restoran Laluna Tarempa</a></p>
-        </section>
-    </main>
+<section class="menu-section">
+  <h2>Menu</h2>
 
-    <!-- Simple footer -->
-    <footer>
-        <p>&copy; 2025 Laluna Tarempa. All rights reserved.</p>
-    </footer>
+  <!-- PDF Viewer -->
+  <iframe src="menu.pdf"></iframe>
+
+  <p style="margin-top:10px;">
+    Jika tidak tampil, 
+    <a href="menu.pdf" target="_blank">klik di sini untuk buka menu</a>
+  </p>
+</section>
+
+<footer>
+  <p>© 2026 Laluna Tarempa</p>
+</footer>
+
 </body>
 </html>
