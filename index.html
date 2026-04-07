@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Laluna Tarempa</title>
+
 <style>
 body {
   margin: 0;
@@ -11,6 +12,7 @@ body {
   background: #fafafa;
   color: #333;
 }
+
 /* HEADER */
 header {
   background: white;
@@ -20,17 +22,21 @@ header {
   align-items: center;
   border-bottom: 1px solid #eee;
 }
+
 header img {
   height: 40px;
 }
+
 /* HERO */
 .hero {
   text-align: center;
   padding: 40px 20px;
 }
+
 .hero h1 {
   margin-bottom: 10px;
 }
+
 .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -39,24 +45,28 @@ header img {
   text-decoration: none;
   border-radius: 5px;
 }
+
 /* MENU */
 .menu-section {
   padding: 20px;
   max-width: 1000px;
   margin: auto;
 }
+
 iframe {
   width: 100%;
   height: 80vh;
   border: none;
   border-radius: 10px;
 }
+
 /* FOOTER */
 footer {
   background: #1f1f1f;
   color: #ddd;
   padding: 40px 20px;
 }
+
 .footer-container {
   max-width: 1000px;
   margin: auto;
@@ -64,60 +74,101 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .footer-left, .footer-right {
   width: 45%;
 }
+
 .footer-left p,
 .footer-right p {
   margin: 8px 0;
 }
+
 .footer-left p::before,
 .footer-right p::before {
   content: "• ";
   color: #4da6ff;
 }
+
 footer a {
   color: #4da6ff;
   text-decoration: none;
 }
+
 footer a:hover {
   text-decoration: underline;
 }
 </style>
+
 </head>
 <body>
+
 <header>
-  <!-- LOGO DI KIRI -->
   <img src="Logo.jpg" alt="Laluna Tarempa">
 </header>
+
 <section class="hero">
   <h1>Masakan Melayu Khas Tarempa</h1>
   <p>Tempat Nongkrong Yang Asik Dengan Harga Terjangkau</p>
-  <a class="btn" href="https://wa.me/6281277640663">Pesan via WhatsApp</a>
+  <a id="waBtn" class="btn" target="_blank">Pesan via WhatsApp</a>
 </section>
+
 <section class="menu-section">
   <h2 style="text-align:center;">Menu</h2>
-  <iframe src="https://drive.google.com/file/d/1xgO4-EneK4QVHzxCnFHGlgd8rxALGmyg/preview"></iframe>
+
+  <iframe id="menuFrame"></iframe>
+
   <p style="text-align:center; margin-top:10px;">
     Jika tidak tampil, 
-    <a href="https://drive.google.com/file/d/1xgO4-EneK4QVHzxCnFHGlgd8rxALGmyg/view" target="_blank">
-      klik di sini
-    </a>
+    <a id="menuLink" target="_blank">klik di sini</a>
   </p>
 </section>
+
 <footer>
   <div class="footer-container">
+
     <div class="footer-left">
-      <p>WA standby : <a href="https://wa.me/6281277640663" target="_blank">081277640663</a></p>
-      <p>GoFood: <a href="https://gofood.co.id/en/batam/restaurant/laluna-tarempa-kompleks-ruko-lavinca-1da060a4-a277-4266-9344-95831e8dc152" target="_blank">Laluna Tarempa</a></p>
-      <p>GrabFood: <a href="https://food.grab.com/id/id/restaurant/laluna-tarempa-batu-besar-delivery/IDGFSTI000013t7" target="_blank">Laluna Tarempa</a></p>
-      <p>Instagram: <a href="https://www.instagram.com/laluna_terempa/" target="_blank">@laluna_terempa</a></p>
+      <p>WA standby : <a id="waFooter" target="_blank"></a></p>
+      <p>GoFood: <a id="gofoodLink" target="_blank">Laluna Tarempa</a></p>
+      <p>GrabFood: <a id="grabfoodLink" target="_blank">Laluna Tarempa</a></p>
+      <p>Instagram: <a id="igLink" target="_blank">@laluna_terempa</a></p>
     </div>
+
     <div class="footer-right">
-      <p>Ruko Lavinca, Jl. Tengku Sulung No.1, Batu Besar, Nongsa, Kota Batam 29466.</p>
-      <p>Google Maps: <a href="https://www.google.com/maps/search/Restoran+Laluna+Tarempa+Batam" target="_blank">Restoran Laluna Tarempa</a></p>
+      <p id="addressText"></p>
+      <p>Google Maps: <a id="mapsLink" target="_blank">Restoran Laluna Tarempa</a></p>
     </div>
+
   </div>
 </footer>
+
+<script>
+fetch('config.json')
+  .then(res => res.json())
+  .then(cfg => {
+
+    // MENU
+    document.getElementById('menuFrame').src = cfg.menu_pdf;
+    document.getElementById('menuLink').href = cfg.menu_pdf_view;
+
+    // WHATSAPP
+    document.getElementById('waBtn').href = "https://wa.me/" + cfg.whatsapp_number;
+    document.getElementById('waBtn').innerText = cfg.whatsapp_text;
+
+    document.getElementById('waFooter').href = "https://wa.me/" + cfg.whatsapp_number;
+    document.getElementById('waFooter').innerText = cfg.footer.wa_display;
+
+    // LINKS
+    document.getElementById('gofoodLink').href = cfg.footer.gofood_link;
+    document.getElementById('grabfoodLink').href = cfg.footer.grabfood_link;
+    document.getElementById('igLink').href = cfg.footer.instagram_link;
+
+    // ADDRESS
+    document.getElementById('addressText').innerText = cfg.footer.address;
+    document.getElementById('mapsLink').href = cfg.footer.maps_link;
+
+  });
+</script>
+
 </body>
 </html>
