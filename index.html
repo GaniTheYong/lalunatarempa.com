@@ -152,10 +152,13 @@ fetch('config.json')
     document.getElementById('menuLink').href = cfg.menu_pdf_view;
 
     // WHATSAPP
-    document.getElementById('waBtn').href = "https://wa.me/" + cfg.whatsapp_number;
+    const whatsappUrl = "https://wa.me/" + cfg.whatsapp_number +
+      (cfg.whatsapp_message ? "?text=" + encodeURIComponent(cfg.whatsapp_message) : "");
+
+    document.getElementById('waBtn').href = whatsappUrl;
     document.getElementById('waBtn').innerText = cfg.whatsapp_text;
 
-    document.getElementById('waFooter').href = "https://wa.me/" + cfg.whatsapp_number;
+    document.getElementById('waFooter').href = whatsappUrl;
     document.getElementById('waFooter').innerText = cfg.footer.wa_display;
 
     // LINKS
